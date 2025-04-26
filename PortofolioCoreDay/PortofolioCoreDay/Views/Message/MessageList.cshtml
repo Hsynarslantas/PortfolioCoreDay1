@@ -1,0 +1,32 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "MessageList";
+    Layout = "~/Views/Shared/AdminLayout/_AdminLayout.cshtml";
+}
+<h2>Mesaj Listesi</h2>
+<table class="table table-bordered"
+    <tr>
+        <th>#</th>
+        <th>İsim Soyisim</th>
+        <th>Email</th>
+        <th>Mesaj Başlığı</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+                        <tr>
+                             <td>@item.MessageId</td>
+                             <td>@item.NameSurname</td>
+                             <td>@item.Email</td>
+                             <td>@item.Subject</td>
+                             <td>@item.MessageDetail</td>
+                             <td><a href="/Message/DeleteMessage/@item.MessageId"class="btn btn-danger">Sil</a></td>
+                             <td><a href="/Message/UpdateMessage/@item.MessageId"class="btn btn-success">Güncelle</a></td>
+                        </tr>
+    }
+    </table>
+<a href="/Message/CreateMessage" class="btn btn-info">Yeni Mesaj</a>
+
+

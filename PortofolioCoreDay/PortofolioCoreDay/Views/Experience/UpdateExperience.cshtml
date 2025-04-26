@@ -1,0 +1,24 @@
+﻿@model Experience
+@{
+    ViewData["Title"] = "UpdateExperience";
+    Layout = "~/Views/Shared/AdminLayout/_AdminLayout.cshtml";
+}
+<h1> Deneyim Güncelleme</h1>
+<form method="post">
+    <label>Şirket Adı</label>
+    <input type="text" asp-for="CompanyName" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Çalıştığı Kısım</label>
+    <input type="text" asp-for="Title" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Deneyim Tarihi</label>
+    <input type="text" asp-for="ExperienceDate" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" style="border:1px solid black" />
+    <br />
+    <button class="btn btn-primary">Deneyim Güncelle</button>
+
+</form>
+
+

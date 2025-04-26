@@ -1,0 +1,37 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "AboutList";
+    Layout = "~/Views/Shared/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Listesi</h2>
+<table class="table table-bordered"
+    <tr>
+        <th>#</th>
+        <th>İsim Soyisim</th>
+        <th>Ünvan</th>
+        <th>Email</th>
+        <th>Şehir</th>
+        <th>Derece</th>
+        <th>Açıklama</th>
+
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+                    <tr>
+                         <td>@item.AboutId</td>
+                         <td>@item.Name</td>
+                         <td>@item.Title</td>
+                         <td>@item.Email</td>
+                         <td>@item.City</td>
+                         <td>@item.Degree</td>
+                         <td>@item.Description</td>
+                         <td><a href="/About/DeleteAbout/@item.AboutId"class="btn btn-danger">Sil</a></td>
+                         <td><a href="/About/UpdateAbout/@item.AboutId"class="btn btn-success">Güncelle</a></td>
+                    </tr>
+    }
+    </table>
+<a href="/About/CreateAbout" class="btn btn-info">Yeni Bilgi Girişi</a>
+

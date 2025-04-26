@@ -1,0 +1,91 @@
+﻿@model List<About>
+<section id="about" class="about section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Hakkımda</h2>
+        <p>
+            Merhaba!Yazılım geliştirme yolculuğuna yeni başlamış bir bilgisayar programcılığı öğrencisiyim. Web teknolojilerine özel bir ilgim var ve şu an MVC mimarisi kullanarak geliştirdiğim projelerle kendimi bu alanda geliştiriyorum.
+            Kod yazarken hem öğreniyor hem de yaratıcılığımı ortaya koymaya çalışıyorum. Amacım; sağlam, temiz ve sürdürülebilir yazılımlar geliştirerek bu alanda profesyonel bir kariyer inşa etmek. Sürekli öğrenmeye açık, meraklı ve çözüm odaklı biriyim.
+        </p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        @foreach(var item in Model)
+        {
+        <div class="row gy-4 justify-content-center">
+            <div class="col-lg-4">
+                    <img src="/iPortfolio-1.0.0/assets/img/my-profile-img.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-8 content">
+                <h2>@item.Title</h2>
+                <p class="fst-italic py-3">
+                 "Yazılım geliştirme sürecinde yeni şeyler öğrenmekten büyük keyif alıyorum. Kod yazarken zamanın nasıl geçtiğini fark etmiyorum. 
+                 Takım çalışmasına açık, öğrenmeye hevesli ve sürekli kendini geliştirmeye çalışan biriyim."
+                </p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Doğum Günüm:</strong> <span>@item.Birthday</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>İnternet Sitem:</strong> <span>@item.Website</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Telefonum:</strong> <span>@item.Phone</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Şehir:</strong> <span>@item.City</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Yaş:</strong> <span>@item.Age</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Derece:</strong> <span>@item.Degree</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>@item.Email</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Çalışma Durumu:</strong> <span>Çalışabilir</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="py-3">
+                    @item.Description
+                </p>
+            </div>
+        </div>
+        }
+</section>
+<section id="stats" class="stats section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item">
+                    <i class="bi bi-emoji-smile"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="316" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Çalışan Uygulamalar</strong> <span>Referans Uygulamalarım</span></p>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item">
+                    <i class="bi bi-journal-richtext"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="400" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Projelerim</strong> <span>Tek Başıma Yaptığım Projeler</span></p>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item">
+                    <i class="bi bi-headset"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Destek</strong> <span>Yardım Ettiğim Projeler</span></p>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item">
+                    <i class="bi bi-people"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="16" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Büyük Çalışmalar</strong> <span>Grup Çalışmaları</span></p>
+                </div>
+            </div><!-- End Stats Item -->
+
+        </div>
+
+    </div>

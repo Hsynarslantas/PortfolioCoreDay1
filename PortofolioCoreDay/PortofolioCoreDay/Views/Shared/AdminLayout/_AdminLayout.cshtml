@@ -1,0 +1,26 @@
+﻿
+<!doctype html>
+<html lang="en">
+@* HEAD kısmı (CSS, meta vs.) *@
+@Html.Partial("~/Views/AdminLayout/PartialHead.cshtml")
+
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+
+        @* Sol Menü ve Üst Menü *@
+        <nav id="sidebar">
+            @Html.Partial("~/Views/AdminLayout/PartialSidebarTopMenu.cshtml")
+            @Html.Partial("~/Views/AdminLayout/PartialSidebar.cshtml")
+        </nav>
+
+        @* Sayfa içeriği burada gösterilecek *@
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @RenderBody()
+        </div>
+    </div>
+
+    @* JS dosyaları ve scriptler *@
+    @Html.Partial("~/Views/AdminLayout/PartialScript.cshtml")
+</body>
+</html>
+

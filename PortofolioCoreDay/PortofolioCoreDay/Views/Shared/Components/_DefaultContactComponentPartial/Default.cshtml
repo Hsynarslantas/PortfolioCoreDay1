@@ -1,0 +1,117 @@
+﻿@model List<Contact>
+
+<section id="contact" class="contact section">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Bana Ulaşın</h2>
+        <p>Bana ulaşabileceğiniz bilgilerim aşağıda bulunuyor. Daha ne bekliyorsun? Hadi!</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            <div class="col-lg-5 d-flex flex-column justify-content-between">
+
+                @if (Model != null && Model.Count > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="info-wrap">
+                            <div class="info-item d-flex mb-3">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Adres</h3>
+                                    <p>@item.Address</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item d-flex mb-3">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Bana Ulaşın</h3>
+                                    <p>@item.Phone</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item d-flex mb-3">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>@item.Email</p>
+                                </div>
+                            </div>
+
+                            <div class="map-container">
+                                <iframe src="@item.MapUrl" frameborder="0" style="border:0; width: 100%; height: 250px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <!-- Contact verisi yoksa örnek veri göster -->
+                    <div class="info-wrap">
+                        <div class="info-item d-flex mb-3">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h3>Adres</h3>
+                                <p>Örnek Mahallesi, İstanbul</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item d-flex mb-3">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Bana Ulaşın</h3>
+                                <p>+90 555 555 55 55</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item d-flex mb-3">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>ornek@mail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18..." frameborder="0" style="border:0; width: 100%; height: 250px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-md-6">
+                <form asp-controller="Message" asp-action="CreateMessage" method="post">
+                    <div class="row gy-4">
+
+                        <div class="col-md-6">
+                            <label>İsim Soyisim</label>
+                            <input type="text" name="NameSurname" class="form-control" required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Email</label>
+                            <input type="email" name="Email" class="form-control" required />
+                        </div>
+
+                        <div class="col-md-12">
+                            <label>Mesajın Başlığı</label>
+                            <input type="text" name="Subject" class="form-control" required />
+                        </div>
+
+                        <div class="col-md-12">
+                            <label>Mesajınız</label>
+                            <textarea name="MessageDetail" rows="10" class="form-control" required></textarea>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary">Mesajı yolla</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    
+</section>
